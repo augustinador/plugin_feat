@@ -52,11 +52,12 @@ import pandas
 import recordlinkage
 from recordlinkage.datasets import load_febrl1
 
+UNIQUE = "_row_number"
 COL_BLOCK = "Name_1_2_combined"
 COL_TO_COMPARE = ["Name_1", "Street_1", "House_Number_1"]
 THRESHOLD = 0.7
 
-dataset_X01_BusinessPartner_filtered = dataiku.Dataset("out_emb_sorted")
+dataset_X01_BusinessPartner_filtered = dataiku.Dataset(input_A_names)
 dfA = dataset_X01_BusinessPartner_filtered.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
@@ -92,7 +93,7 @@ features = features.reset_index()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 COL_TO_COMPARE.append(COL_BLOCK)
-COL_TO_COMPARE.append("_row_number")
+COL_TO_COMPARE.append(UNIQUE)
 
 tmp1 = features.merge(dfA[COL_TO_COMPARE] , how='inner', left_index=False, right_index=True, left_on="level_0")
 tmp2= features[["level_0", "level_1"]].merge(dfA[COL_TO_COMPARE], how='inner', left_index=False, right_index=True, left_on="level_1")
@@ -101,5 +102,5 @@ features = tmp1.merge(tmp2, how='inner', left_index=True, right_index=True).drop
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
-plugin_test = dataiku.Dataset("plugin_test")
+plugin_test = dataiku.Dataset(output_A_names)
 plugin_test.write_with_schema(features)
