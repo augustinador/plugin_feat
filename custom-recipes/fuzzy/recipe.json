@@ -28,18 +28,7 @@
             "arity": "UNARY",
             "required": true,
             "acceptsDataset": true
-        },
-        {
-            "name": "input_B_role",
-            "label": "input B displayed name",
-            "description": "what input B means",
-            "arity": "NARY",
-            "required": false,
-            "acceptsDataset": true
-            // ,'mustBeSQL': true
-            // ,'mustBeStrictlyType':'HDFS'
         }
-        // ...
     ],
 
     "outputRoles": [
@@ -50,16 +39,7 @@
             "arity": "UNARY",
             "required": false,
             "acceptsDataset": true
-        },
-        {
-            "name": "errors_output",
-            "label": "errors output displayed name",
-            "description": "what errors output means",
-            "arity": "UNARY",
-            "required": false,
-            "acceptsDataset": true
         }
-        // ...
     ],
 
     /* The field "params" holds a list of all the params
@@ -73,47 +53,30 @@
 
     "params": [
         {
-            "name": "parameter1",
+            "name": "COL_BLOCK",
             "label": "User-readable label",
-            "type": "STRING",
-            "description": "Some documentation for parameter1",
-            "mandatory": true
+            "type": "COLUMN",
+            "columnRole": "input_A_role"
         },
+        
+         {
+            "name": "COL_TO_COMPARE",
+            "label": "User-readable label",
+            "type": "COLUMNS",
+            "columnRole": "input_A_role"
+        }
+        
+        ,
         {
-            "name": "parameter2",
-            "type": "INT",
-            "defaultValue": 42
+            "name": "threshold",
+            "type": "DOUBLE",
+            "defaultValue": 0.7
             /* Note that standard json parsing will return it as a double in Python (instead of an int), so you need to write
                int(get_recipe_config()['parameter2'])
             */
-        },
-
-        // A "SELECT" parameter is a multi-choice selector. Choices are specified using the selectChoice field
-        {
-            "name": "parameter3",
-            "type": "SELECT",
-            "selectChoices": [
-                {
-                    "value": "val_x",
-                    "label": "display name for val_x"
-                },
-                {
-                    "value": "val_y",
-                    "label": "display name for val_y"
-                }
-            ]
-        },
-
-        // A 'COLUMN' parameter is a string, whose value is a column name from an input schema.
-        // To specify the input schema whose column names are used, use the "columnRole" field like below.
-        // The column names will come from the schema of the first dataset associated to that role.
-        {
-            "name": "parameter4",
-            "type": "COLUMN",
-            "columnRole": "input_B_role"
         }
+           
 
-        // The 'COLUMNS' type works in the same way, except that it is a list of strings.
     ],
 
     // The field "resourceKeys" holds a list of keys that allows to limit the number
