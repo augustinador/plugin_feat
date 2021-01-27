@@ -18,20 +18,15 @@ output_A_names = get_output_names_for_role('main_output')[0]
 # user will be prompted for values.
 
 # The configuration is simply a map of parameters, and retrieving the value of one of them is simply:
-my_variable = get_recipe_config()['parameter_name']
-
-# For optional parameters, you should provide a default value in case the parameter is not present:
-my_variable = get_recipe_config().get('parameter_name', None)
-
-# Note about typing:
-# The configuration of the recipe is passed through a JSON object
-# As such, INT parameters of the recipe are received in the get_recipe_config() dict as a Python float.
-# If you absolutely require a Python int, use int(get_recipe_config()["my_int_param"])
+COL_BLOCK = get_recipe_config()['COL_BLOCK']
+COL_TO_COMPARE = get_recipe_config()['COL_TO_COMPARE']
+print("here")
+print(COL_TO_COMPARE)
+UNIQUE = get_recipe_config()['UNIQUE']
 
 
-#############################
-# Your original recipe
-#############################
+THRESHOLD = int(get_recipe_config()['threshold'])
+
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE_MAGIC_CELL
 # Automatically replaced inline charts by "no-op" charts
