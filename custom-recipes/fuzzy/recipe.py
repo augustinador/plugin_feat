@@ -28,11 +28,7 @@ UNIQUE = get_recipe_config()['UNIQUE']
 THRESHOLD = int(get_recipe_config()['threshold'])
 
 
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE_MAGIC_CELL
-# Automatically replaced inline charts by "no-op" charts
-# %pylab inline
-import matplotlib
-matplotlib.use("Agg")
+
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 import dataiku
