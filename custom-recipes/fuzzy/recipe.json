@@ -54,23 +54,23 @@
     "params": [
         {
             "name": "COL_BLOCK",
-            "label": "User-readable label",
+            "label": "Block column",
             "type": "COLUMN",
             "columnRole": "input_A_role"
         },
         
          {
             "name": "COL_TO_COMPARE",
-            "label": "User-readable label",
+            "label": "Columns to check for duplicate",
             "type": "COLUMNS",
             "columnRole": "input_A_role"
         }
-        
+       
         ,
         
             {
             "name": "UNIQUE",
-            "label": "The row id",
+            "label": "Row ID",
             "type": "COLUMN",
             "columnRole": "input_A_role"
         }
