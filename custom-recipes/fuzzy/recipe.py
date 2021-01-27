@@ -72,7 +72,7 @@ compare_cl = recordlinkage.Compare()
 for col_name in COL_TO_COMPARE:
     compare_cl.string(col_name, col_name, method='damerau_levenshtein', threshold=THRESHOLD)
 
-
+print('does it work?')
 #compare_cl.string('Matchcode_Term_1', 'Matchcode_Term_1', method='damerau_levenshtein', threshold=0.85)
 
 
