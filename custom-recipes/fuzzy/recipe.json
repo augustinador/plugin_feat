@@ -67,6 +67,15 @@
         }
         
         ,
+        
+            {
+            "name": "UNIQUE",
+            "label": "The row id",
+            "type": "COLUMN",
+            "columnRole": "input_A_role"
+        }
+        ,
+        
         {
             "name": "threshold",
             "type": "DOUBLE",
