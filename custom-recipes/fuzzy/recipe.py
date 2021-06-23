@@ -11,7 +11,7 @@ input_A_names = get_input_names_for_role('input_A_role')[0]
 output_A_names = get_output_names_for_role('main_output')[0]
 
 
-# The configuration consists of the parameters set up by the user in the recipe Settings tab.
+# The configuration consists of the parameters set up by the user in the recipe Setti
 
 # Parameters must be added to the recipe.json file so that DSS can prompt the user for values in
 # the Settings tab of the recipe. The field "params" holds a list of all the params for wich the
