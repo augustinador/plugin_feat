@@ -13,7 +13,7 @@ output_A_names = get_output_names_for_role('main_output')[0]
 
 # The configuration consists of 
 
-# Parameters must be added to the recipe.json file so that DSS can prompt the user for values in
+# Parameters must be added to the recipe.json file so that 
 # the Settings tab of the recipe. The field "params" holds a list of all the params for wich the
 # user will be prompted for values.
 
